@@ -1,0 +1,70 @@
+.header {
+    background-color: transparent;
+    transition-duration: 300ms;
+    color: white;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    & .contentContainer {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px;
+    };
+    &__contacts {
+        color: white;
+        transition: 0.3s;
+    }
+    @include md {
+        padding: 0 20px;
+    }
+    @include mobile {
+        min-height: 48px;
+        &__contacts {
+            display: none;
+        }
+        & .nav {
+            display: none;
+            position: fixed;
+            width: 30%;
+            top: 48px;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.85);
+            &__list {
+                flex-direction: column;
+                padding: 20px 0 0 10px;
+            }
+            &__item {
+                margin-bottom: 15px;
+            }
+            &--active {
+                display: block;
+            }
+        }
+        & .contentContainer {
+            justify-content: flex-end;
+        }
+    }
+    @include sm {
+        & .nav {
+            width: 100%;
+        }
+    }
+}
+
+.sticky {
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+.nav {
+    &__list {
+        display: flex;
+    };
+
+    &__item {
+        margin-right: 20px;
+    }
+
+}
+

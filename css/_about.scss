@@ -1,0 +1,132 @@
+.about {
+    width: 100vw;
+    background-color: #fafafa;
+    z-index: 1;
+    &.contentContainer {
+        display: flex;
+        flex-direction: column;
+    }
+    &__title {
+        display: none;
+    }
+    &__aboutUs {
+        width: 100%;
+    }
+
+    &__standarts {
+        width: 100%;
+    }
+}
+
+.aboutUs {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 100px;
+    &__img {
+        max-width: 45%;
+        object-fit: contain;
+        margin-right: 20px;
+    }
+    &__title {
+        font-size: 24px;
+        color: #e5b463;
+    }
+    &__content {
+        font-size: 20px;
+        max-width: 50%;
+        padding-left: 80px;
+        text-align: left;
+    }
+    &__text {
+        line-height: 1.4;
+        text-indent: 1em;
+        text-align: justify;
+    }
+    @include sm {
+        flex-direction: column;
+        &__img {
+            max-width: 100%;
+            margin: 0 0 20px;
+        }
+        &__content {
+            max-width: 100%;
+            padding-left: 10px;
+            font-size: 14px;
+            text-align: left;
+        }
+    }
+}
+
+.standarts {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    padding-top: 120px;
+    &__img {
+        max-width: 45%;
+        object-fit: cover;
+        margin-left: 20px;
+    }
+    &__title {
+        font-size: 24px;
+        color: #e5b463;
+        margin-bottom: 50px;
+    }
+    &__content {
+        font-size: 20px;
+        max-width: 50%;
+        padding: 30px 80px 0;
+        text-align: left;
+    }
+    &__list {
+        list-style-type: circle;
+        &Item {
+            margin-top: 10px;
+        }
+    }
+
+    &::after {
+        content: "Наши стандарты";
+        position: absolute;
+        top: 10px;
+        font-size: 90px;
+        left: 0px;
+        color: rgba(0, 0, 0, 0.05);
+        font-weight: 700;
+        line-height: 1;
+        z-index: 0;
+    }
+
+    @include md {
+        &::after {
+            font-size: 60px;
+        }
+    }
+
+    @include mobile {
+        &::after {
+            top: 20px;
+            font-size: 50px;
+        }
+    }
+
+    @include sm {
+        flex-direction: column;
+        &__img {
+            max-width: 100%;
+            margin: 0 0 20px;
+        }
+        &__content {
+            max-width: 100%;
+            padding: 0 0 0 10px;
+            font-size: 14px;
+            text-align: left;
+        }
+        &::after {
+            content: '';
+        }
+    }
+}
+

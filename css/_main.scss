@@ -1,0 +1,88 @@
+.main {
+    color: white;
+    width: 100vw;
+    max-height: 700px;
+    position: relative;
+}
+
+
+.productInSlide {
+    background-image: url('https://zolotogroup.ru/static/manual_uploads/file-3d7f642bd65e10833ec1bd9d126b81957516ea81JL01_.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 700px;
+    position: relative;
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 40%;
+        min-height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    &__text {
+        text-align: justify;
+        font-size: 18px;
+        max-width: 70%;
+        margin-bottom: 50px;
+        
+    }
+
+    &__btn {
+        width: 30%;
+        font-size: 14px;
+        padding: 10px;
+        border: 1px solid white;
+        outline: none;
+        color: white;
+        transition: 0.3s;
+        &:hover {
+            transition: 0.3s;
+            background-color: white;
+            border-color: black;
+            color: black;
+        }
+    }
+    @include md {
+        &__text {
+          font-size: 16px;  
+        }
+    }
+    @include mobile {
+        height: 600px;
+        &__content {
+            width: 50%;
+        }
+    }
+    @include sm {
+        height: 400px;
+        &__content {
+            width: 100%;
+        }
+        &__text {
+            font-size: 14px;
+            padding-top: 20px;
+            margin-bottom: 30px;
+            max-width: 90%;
+        }
+        &__btn {
+            padding: 5px;
+            width: 40%;
+        }
+    }
+}
+
+.swiper-slide {
+    &:nth-child(even) {
+        & .productInSlide {
+            background-image: url('https://zolotogroup.ru/static/manual_uploads/file-caa2217b9e4befc8ed1e1995ca6a196c156dbab1JL06_.jpg');
+        }
+    }
+}
+

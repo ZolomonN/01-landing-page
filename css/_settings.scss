@@ -1,0 +1,151 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  overflow-anchor: none;
+  margin: 0;
+  position: relative;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.contentContainer {
+  max-width: 1170px;
+  margin: 0 auto;
+  @include md {
+    padding: 0 20px;
+  }
+}
+
+.btnReset {
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.main-link {
+  position: relative;
+  font-size: 15px;
+  color: white;
+  transition: 0.3s;
+  &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 2px;
+      background-color: currentColor;
+      transition: width 0.15s;
+  }
+  &:hover {
+      &::before {
+          width: 100%;
+          transition: width 0.15s;
+      }
+  }
+  &--equator {
+    color: #e5b463;
+    transition: 0.3s;
+    &::before {
+      width: 100%;
+      transition: width 0.15s;
+    }
+  }
+}
+
+.fixedBtn {
+  position: fixed;
+  right: 40px;
+  bottom: 20px;
+  width: 40px;
+  height: 40px;
+  transform: rotate(180deg);
+  transition: 0.3s;
+  background-image: url('../img/down-arrow.svg');
+  background-size: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #e5b463;
+  border-radius: 90px;
+  outline: none;
+  z-index: 100;
+  &:hover {
+    transform: rotate(-180deg);
+    transition: 0.3s;
+  }
+}
+
+.burger {
+  position: fixed;
+  display: none;
+  width: 32px;
+  height: 26px;
+  left: 20px;
+  top: 13px;
+  z-index: 100;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 2px solid white;
+  border-radius: 8px;
+
+  &::before {
+      content: "";
+      width: 50%;
+      position: absolute;
+      left: 50%;
+      top: 3px;
+      height: 2px;
+      transform: translateX(-50%);
+      background-color: white;
+  }
+
+  &::after {
+      content: "";
+      width: 50%;
+      position: absolute;
+      left: 50%;
+      bottom: 3px;
+      height: 2px;
+      transform: translateX(-50%);
+      background-color: white;
+  }
+
+  &__line {
+      width: 50%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      height: 2px;
+      background-color: white;
+
+      
+  }
+
+  @include mobile {
+      display: block;
+      
+  }
+}

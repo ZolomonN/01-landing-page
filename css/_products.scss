@@ -1,0 +1,114 @@
+.products {
+    position: relative;
+    width: 100vw; 
+    background-color: #fafafa;
+    padding: 200px 0;
+    &__title {
+        display: none;
+    }
+    &__list {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__item {
+        background-color: #fff;
+        width: 30%;
+        height: 350px;
+        overflow-y: hidden;
+        box-shadow: 0px 10px 15px rgba(0,0,0,0.5);
+        &:hover {
+            & > div {
+                transition: 0.3s;
+                transform: translateY(-350px);
+            }
+        }
+    }
+    &__slideContainer {
+        display: flex;
+        flex-direction: column;
+        transition: 0.3s;
+    }
+    &__img {
+        width: 351px;
+        max-height: 350px;
+        object-fit: contain;
+    }
+    &__descr {
+        margin-top: 30px;
+        padding-left: 10px;
+        & ul {
+            padding: 0 20px;
+            list-style-type: disc;
+        }
+    }
+    &::after {
+        content: "Продукция";
+        position: absolute;
+        top: 40px;
+        font-size: 90px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: rgba(0, 0, 0, 0.05);
+        font-weight: 700;
+        line-height: 1;
+        z-index: 0;
+    }
+
+    @include md {
+        &::after {
+            font-size: 60px;
+        }
+    }
+
+    @include mobile {
+        padding-bottom: 100px;
+        &__list {
+            flex-direction: column;
+        }
+        &__item {
+            width: 100%;
+            margin-bottom: 20px;
+            pointer-events: none;
+        }
+        &__slideContainer {
+            flex-direction: row;
+        }
+        &__descr {
+            font-size: 14px;
+            max-width: 50%;
+        }
+        &::after {
+            top: 60px;
+            font-size: 50px;
+        }
+    }
+
+    @include xs {
+        &::after {
+            font-size: 40px;
+        }
+        &__list {
+            align-items: center;
+        }
+        &__item {
+            max-width: 320px;
+        }
+        &__slideContainer {
+            position: relative;
+        }
+        &__descr {
+            margin: 0;
+            padding: 8px;
+            position: absolute;
+            max-width: 100%;
+            width: 100%;
+            height: 100%;
+            font-size: 14px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+    }
+
+}
+

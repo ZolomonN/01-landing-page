@@ -1,0 +1,61 @@
+.reviews {
+    position: relative;
+    background-color: #fafafa;
+    width: 100vw;
+    padding: 200px 0 100px;
+    & .contentContainer {
+        background-color: #fff;
+    }
+    &__title {
+        display: none;
+    }
+    &::after {
+        content: "Отзывы";
+        position: absolute;
+        top: 10px;
+        font-size: 90px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: rgba(0, 0, 0, 0.05);
+        font-weight: 700;
+        line-height: 1;
+        z-index: 0;
+    }
+
+    @include md {
+        &::after {
+            font-size: 60px;
+        }
+    }
+    @include mobile {
+        padding-bottom: 0;
+    }
+    @include sm {
+        &::after {
+            font-size: 40px;
+        }
+    }
+}
+
+.review {
+    padding: 20px;
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+    &__header {
+        display: flex;
+    }
+    &__img {
+        max-width: 100px;
+        max-height: 100px;
+        object-fit: cover;
+    }
+    &__props {
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+    }
+    &__text {
+        text-align: justify;
+    }
+
+}
